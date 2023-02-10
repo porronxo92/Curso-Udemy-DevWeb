@@ -110,11 +110,14 @@ h3 {
 }
 
 
+
 .titulo span {
     font-size: 2rem;
     color: var(--secondarycolor);
     font-weight: 400;
+    display: block;
 }
+
 
 /* Manu de navegacion principal */
 
@@ -197,7 +200,7 @@ h3 {
 }
 
 .hero h2 span {
-    font-size: 2rem;
+    font-size: 1.8rem;
     color: lightgray;
 }
 
@@ -326,5 +329,7 @@ h3 {
 /* Footer */
 
 .footer{
+    color: var(--negro);
     text-align: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }

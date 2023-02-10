@@ -1,0 +1,42 @@
+:root{
+    --primaryColor:#9c27b0;
+    --primaryColorDark:#89119d;
+    --secondaryColor:#ffce00;
+    --secondaryColorDark:rgb(233,287,2);
+    --blanco:#fff;
+    --negro:#000;
+    --fuentePrincipal:'Staatliches', cursive;
+
+}
+
+
+/* Necesarios proyecto */
+
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+    scroll-snap-type: y mandatory;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+/* Globales */
+
+body {
+    font-size: 1.6rem;
+    /* 1rem = 10px */
+    font-family: var(--fuentePrincipal);
+    background-color: var(--primaryColor);
+    line-height: 1.5;
+}
+
+p{
+    font-size: 1.8rem;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--blanco);
+}
+

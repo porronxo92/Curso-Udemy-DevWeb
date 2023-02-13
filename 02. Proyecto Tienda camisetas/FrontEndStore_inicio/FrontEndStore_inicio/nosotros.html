@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FrontEnd Store</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header class="header">
+        <a href="index.html">
+            <img class="header__logo" src="img/logo.png" alt="logo">
+        </a>
+    </header>
+
+    <nav class="navegacion">
+        <a href="index.html" class="navegacion__enlace">Tienda</a>
+        <a href="nosotros.html" class="navegacion__enlace navegacion__enlace--activo">Nosotros</a>
+        
+        <a href="index.html" class="navegacion__carrito">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-shopping-cart" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffce00" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                <circle cx="6" cy="19" r="2" />
+                <circle cx="17" cy="19" r="2" />
+                <path d="M17 17h-11v-14h-2" />
+                <path d="M6 5l14 1l-1 7h-13" />
+              </svg>
+        </a>
+    </nav>
+
+    <main class="contenedor">
+        <h1>Nosotros</h1>
+
+        <div class="nosotros">
+            <div class="nosotros__contenido">
+                <p>
+                    Nullam id lectus diam. Fusce posuere elit a leo aliquet, vehicula posuere lorem egestas. Aenean ac
+                    magna sed ligula tristique placerat. Vivamus viverra lobortis lectus luctus auctor. Nulla gravida
+                    quam nunc, ac auctor lectus venenatis ut. Integer elementum eget augue vulputate ultricies. Sed
+                    ultricies congue tellus commodo molestie. Phasellus efficitur et urna vitae efficitur. Donec
+                    interdum aliquam risus in porta. Integer a pulvinar felis, ac maximus nibh. Maecenas consectetur
+                    magna in pulvinar porta.
+                </p>
+                <p>
+                    Morbi mi turpis, luctus vitae dignissim in, feugiat sit amet augue. Morbi ac malesuada libero, eu
+                    pretium dui. Ut scelerisque, eros tempus sollicitudin efficitur, sem metus porttitor nisl, quis
+                    sodales neque sem et augue. Vivamus lorem nisl, sodales at semper sit amet, feugiat et leo. Donec
+                    mauris augue, pellentesque eu mattis cursus, mollis vitae ipsum. Phasellus sollicitudin vehicula
+                    tortor nec viverra.
+                </p>
+
+            </div>
+            <img src="img/nosotros.jpg" alt="nosotros" class="nosotros__imagen">
+        </div>
+    </main>
+
+    <section class="contenedor comprar">
+        <h2 class="comprar__titulo">
+            ¿Por qué comprar con nosotros?
+        </h2>
+
+        <div id="bloques" class="bloques">
+            <!-- <div class="bloque">
+                <img src="img/icono_1.png" alt="precio">
+                <h2 class="bloque__titulo">Tenemos el mejor precio</h2>
+                <p class="bloque__parrafo">Morbi mi turpis, luctus vitae dignissim in, feugiat sit amet augue. Morbi ac
+                    malesuada libero, eu
+                    pretium dui.</p>
+            </div> -->
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p class="footer__texto">© Todos los derechos reservados - Ruben de la Cruz Diaz - <span id="year"></span></p>
+    </footer>
+</body>
+<script>
+    var date = new Date();
+    var year = date.getFullYear();
+    document.getElementById("year").innerHTML = year;
+
+    var bloque_padre = document.getElementById("bloques");
+
+    for (let i = 1; i <= 4; i++) {
+        let bloque_hijo = document.createElement("div");
+        bloque_hijo.className="bloque";
+        let img_bloque = document.createElement("img");
+        let titulo_bloque = document.createElement("h3");
+        let parrafo_bloque = document.createElement("p");
+        img_bloque.className="bloque__img";
+        parrafo_bloque.className="bloque__parrafo";
+        
+        let xhr = new XMLHttpRequest();
+        img_bloque.src = "img/icono_" + i + ".png";
+        
+        parrafo_bloque.innerHTML = "Morbi mi turpis, luctus vitae dignissim in, feugiat sit amet augue. Morbi ac malesuada libero, eu pretium dui.";
+
+        xhr.open("GET", "txt/icono" + i +".txt", true);
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState === 4 && xhr.status === 200) {
+                titulo_bloque.innerHTML = xhr.responseText;
+            }
+        };
+
+        xhr.send();
+
+        bloque_hijo.appendChild(img_bloque);
+        bloque_hijo.appendChild(titulo_bloque);
+        bloque_hijo.appendChild(parrafo_bloque);
+
+        bloque_padre.appendChild(bloque_hijo);
+    }
+
+
+
+</script>
+
+</html>

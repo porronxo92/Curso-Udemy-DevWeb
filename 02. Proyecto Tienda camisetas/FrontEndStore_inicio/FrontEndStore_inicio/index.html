@@ -14,8 +14,205 @@
 </head>
 
 <body>
-    <p>hola mundo!</p>
-    <a href=""></a>
+    <header class="header">
+        <a href="index.html">
+            <img class="header__logo" src="img/logo.png" alt="logo">
+        </a>
+    </header>
+
+    <nav class="navegacion">
+        <a href="index.html" class="navegacion__enlace navegacion__enlace--activo">Tienda</a>
+        <a href="nosotros.html" class="navegacion__enlace ">Nosotros</a>
+        <div class="navegacion__carrito">
+            <a href="index.html">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-shopping-cart" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffce00" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                    <circle cx="6" cy="19" r="2" />
+                    <circle cx="17" cy="19" r="2" />
+                    <path d="M17 17h-11v-14h-2" />
+                    <path d="M6 5l14 1l-1 7h-13" />
+                  </svg>
+            </a>
+
+        </div>
+    </nav>
+
+    <main class="contenedor">
+        <h1>Nuestros productos</h1>
+
+        <div id="grid" class="grid">
+            
+            <!-- Div de graficos de camisetas sin producto -->
+            <div class="grafico grafico--camisetas">
+            </div>
+            <div class="grafico grafico--node">
+            </div>
+        </div> <!-- Fin div GRID -->
+
+
+
+
+        <!-- <div id="container" class="grid"> -->
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p class="footer__texto">© Todos los derechos reservados - Ruben de la Cruz Diaz - <span id="year"></span></p>
+    </footer>
 </body>
+<script rel="preload">
+    //Obtener año actual
+    var date = new Date();
+    var year = date.getFullYear();
+    document.getElementById("year").innerHTML = year;
+
+    //Leer el archivo XML
+    var xhr = new XMLHttpRequest();
+    var parser = new DOMParser();
+    var xmlData = `
+    <data>
+    <camiseta>
+        <id>1</id>
+        <nombre>VueJS</nombre>
+        <precio>25€</precio>
+    </camiseta>
+    <camiseta>
+        <id>2</id>
+        <nombre>AngularJS</nombre>
+        <precio>25€</precio>
+    </camiseta>
+    <camiseta>
+        <id>3</id>
+        <nombre>ReactJS</nombre>
+        <precio>25€</precio>
+    </camiseta>
+    <camiseta>
+        <id>4</id>
+        <nombre>Redux</nombre>
+        <precio>25€</precio>
+    </camiseta>
+    <camiseta>
+        <id>5</id>
+        <nombre>NodeJS</nombre>
+        <precio>25€</precio>
+    </camiseta>
+    <camiseta>
+        <id>6</id>
+        <nombre>SASS</nombre>
+        <precio>25€</precio>
+    </camiseta>
+    <camiseta>
+        <id>7</id>
+        <nombre>HTML5</nombre>
+        <precio>25€</precio>
+    </camiseta>
+    <camiseta>
+        <id>8</id>
+        <nombre>Github</nombre>
+        <precio>25€</precio>
+    </camiseta>
+    <camiseta>
+        <id>9</id>
+        <nombre>bulmacss</nombre>
+        <precio>25€</precio>
+    </camiseta>
+    <camiseta>
+        <id>10</id>
+        <nombre>typescript</nombre>
+        <precio>25€</precio>
+    </camiseta>
+    <camiseta>
+        <id>11</id>
+        <nombre>drupal</nombre>
+        <precio>25€</precio>
+    </camiseta>
+    <camiseta>
+        <id>12</id>
+        <nombre>javascript</nombre>
+        <precio>25€</precio>
+    </camiseta>
+    <camiseta>
+        <id>13</id>
+        <nombre>graphql</nombre>
+        <precio>25€</precio>
+    </camiseta>
+    <camiseta>
+        <id>14</id>
+        <nombre>wordpress</nombre>
+        <precio>25€</precio>
+    </camiseta>
+</data>
+    `;
+    //var xmlDoc = parser.parseFromString(xmlData, "text/xml");
+    //console.log(xmlData);
+    //console.log(xmlDoc);
+
+    /*for (let i = 0; i < elements.length; i++) {
+        //let element = elements[i].getElementsByTagName("nombre");
+        let nombre = elements[i].getElementsByTagName("nombre")[0].childNodes[0].nodeValue;
+        let precio = elements[i].getElementsByTagName("precio")[0].childNodes[0].nodeValue;
+        console.log("nombre" + ": " + nombre);
+        console.log("precio" + ": " + precio);
+    }*/
+
+    var xhr = new XMLHttpRequest();
+    var parser = new DOMParser();
+    var xmlData, xmlDoc;
+
+    xhr.open("GET", "txt/camisetas.xml", true);
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+            //Crear un div de producto camiseta
+            var container = document.getElementById("grid");
+            xmlData = xhr.responseText;
+            xmlDoc = parser.parseFromString(xmlData, "text/xml");
+            for (var i = 1; i < 15; i++) {
+                var div = document.createElement("div");
+                div.className = "producto"
+
+                var a = document.createElement("a")
+                a.id = "link";
+                div.appendChild(a);
+
+                var img = document.createElement("img");
+                img.className = "producto__imagen";
+                img.src = "img/" + (i) + ".jpg";
+                img.alt = "imagen de camiseta"
+
+                a.appendChild(img);
+
+                var prod_info = document.createElement("div");
+                prod_info.className = "producto__info";
+                var p_nombre = document.createElement("p");
+                var p_precio = document.createElement("p");
+                p_nombre.className = "prod__nombre";
+                p_precio.className = "prod__precio";
+
+                var elements = xmlDoc.getElementsByTagName("camiseta");
+                let nombre = elements[(i - 1)].getElementsByTagName("nombre")[0].childNodes[0].nodeValue;
+                let precio = elements[(i - 1)].getElementsByTagName("precio")[0].childNodes[0].nodeValue;
+                console.log("nombre" + ": " + nombre);
+                console.log("precio" + ": " + precio);
+
+                p_precio.innerHTML = precio;
+                p_nombre.innerHTML = nombre;
+                a.href = "producto.html?id=" + i + "&nombre="+nombre+"&precio="+precio;
+
+                prod_info.appendChild(p_nombre);
+                prod_info.appendChild(p_precio);
+
+                a.appendChild(prod_info);
+                container.appendChild(div);
+            }
+        }
+    };
+    xhr.send();
+
+    
+
+
+</script>
+
+</script>
 
 </html>

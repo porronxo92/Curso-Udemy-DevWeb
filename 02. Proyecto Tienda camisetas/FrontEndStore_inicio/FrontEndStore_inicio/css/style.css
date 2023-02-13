@@ -1,14 +1,23 @@
-:root{
-    --primaryColor:#9c27b0;
-    --primaryColorDark:#89119d;
-    --secondaryColor:#ffce00;
-    --secondaryColorDark:rgb(233,287,2);
-    --blanco:#fff;
-    --negro:#000;
-    --fuentePrincipal:'Staatliches', cursive;
+:root {
+    --primaryColor: #9c27b0;
+    --primaryColorDark: #89119d;
+    --secondaryColor: #ffce00;
+    --secondaryColorDark: rgb(233, 287, 2);
+    --secondcolorDark: #b79a28;
+    --blanco: #fff;
+    --negro: #000;
+    --fuentePrincipal: 'Staatliches', cursive;
 
 }
 
+/* CSS con metodologia BEM - Block Element Modifier 
+    -> Bloque - cuando un elemento es significativo y no requiere de otros elementos para definir su estilo o apariencia, suelen ser contenedores. 
+        Nomenclatura: .bloque
+    -> Elemento - son parte de un bloque, y no son significativos. 
+        Nomenclatura: .bloque__elemento
+    -> Modificador - cuando algun bloque o elemento tiene un diseño diferente y requiere de una modificacion con respecto al original. 
+        Nomenclatura: .bloque--modificacion o .bloque__elemento--modificacion
+*/
 
 /* Necesarios proyecto */
 
@@ -34,9 +43,283 @@ body {
     line-height: 1.5;
 }
 
-p{
+p {
     font-size: 1.8rem;
     font-family: Arial, Helvetica, sans-serif;
     color: var(--blanco);
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    width: 100%;
+}
+
+.contenedor {
+    max-width: 120rem;
+    margin: 0 auto;
+}
+
+h1,
+h2,
+h3 {
+    text-align: center;
+    color: var(--secondaryColor);
+    font-family: var(--fuentePrincipal);
+}
+
+h1 {
+    font-size: 4rem;
+}
+
+h2 {
+    font-size: 3.2rem;
+}
+
+h3 {
+    font-size: 2.4rem;
+}
+
+/* Header */
+.header {
+    display: flex;
+    justify-content: center;
+}
+
+.header__logo {
+    margin: 3rem 0;
+}
+
+/* Footer */
+
+.footer {
+    background-color: var(--primaryColorDark);
+    padding: 1rem 0;
+    margin-top: 2rem;
+}
+
+.footer__texto {
+    font-family: var(--fuentePrincipal);
+    font-size: 2.2rem;
+    color: var(--blanco);
+    text-align: center;
+}
+
+/* Navegacion */
+
+.navegacion {
+    background-color: var(--primaryColorDark);
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.navegacion__enlace {
+    font-family: var(--fuentePrincipal);
+    color: var(--blanco);
+    font-size: 3rem;
+}
+
+.navegacion__enlace--activo,
+.navegacion__enlace:hover {
+    color: var(--secondaryColor);
+
+}
+
+.navegacion__carrito{
+    display: flex;
+    justify-content: end;
+    align-items: end;
+}
+
+/* Grid */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+@media (min-width: 768px) {
+    .grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Productos */
+
+.producto {
+    background-color: var(--primaryColorDark);
+    padding: 1rem;
+}
+
+
+
+.producto__info {}
+
+.prod__nombre {
+    font-size: 4rem;
+}
+
+.prod__precio {
+    font-size: 2.8rem;
+    color: var(--secondaryColor);
+}
+
+.prod__nombre,
+.prod__precio {
+    font-family: var(--fuentePrincipal);
+    margin: 1rem 0;
+    text-align: center;
+}
+
+/* Graficos */
+
+.grafico {
+    min-height: 30rem;
+    background-size: cover;
+    background-repeat: no-repeat;
+    grid-column: 1/3;
+}
+
+.grafico--camisetas {
+    grid-row: 2/3;
+    background-image: url(../img/grafico1.jpg);
+}
+
+.grafico--node {
+    grid-row: 5/6;
+    background-image: url(../img/grafico2.jpg);
+}
+
+@media (min-width: 768px) {
+    .grafico--node {
+        grid-row: 5/6;
+        grid-column: 2/4;
+    }
+}
+
+/* Nosotros */
+
+.nosotros {
+    display: grid;
+    grid-template-rows: repeat(2, auto);
+    gap: 2rem;
+    margin: 2rem;
+
+}
+
+@media (min-width: 768px) {
+    .nosotros {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .nosotros__imagen {
+        grid-column: 2/3;
+    }
+}
+
+.nosotros__contenido {}
+
+.nosotros__contenido p {
+    font-family: var(--fuentePrincipal);
+    color: var(--blanco);
+    justify-content: center;
+    font-weight: 400;
+}
+
+.nosotros__imagen {
+    grid-row: 1/2;
+    background-size: cover;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+
+/* Porque comprar */
+
+.comprar {}
+
+.comprar__titulo {}
+
+.bloques {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    gap: 2rem;
+    margin: 2rem;
+}
+
+@media (width > 768px) {
+    .bloques {
+        grid-template-columns: repeat(4, auto);
+    }
+}
+
+@media (width < 480px) {
+    .bloques {
+        grid-template-columns: repeat(1, auto);
+    }
+}
+
+.bloque {
+    text-align: center;
+}
+
+.bloque__titulo {
+    margin: 0;
+}
+
+.bloque__parrafo {
+    font-family: var(--fuentePrincipal);
+}
+
+
+/* Camiseta */
+@media (min-width: 768px) { 
+    .camiseta{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+        
+    }
+}
+
+.camiseta{
+    margin: 3rem;
+}
+
+.camiseta__form{
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    gap: 2rem;
+}
+
+
+.form__input{
+    border: 1rem solid var(--primaryColorDark);
+    background-color: var(--primaryColor);
+    color: var(--blanco);
+    font-size: 2rem;
+    align-items: center;
+    font-family: var(--fuentePrincipal);
+    text-align: center;
+}
+.form__submit{
+    background-color: var(--secondaryColor);
+    border: none;
+    font-size: 2rem;
+    padding: 2rem;
+    font-family: var(--fuentePrincipal);
+    transition: background-color .5s ease;
+    grid-column: 1/3;
+}
+
+.form__submit:hover{
+    cursor: pointer;
+    font-size: 2.5rem;
+    background-color: var(--secondcolorDark);
 }
 

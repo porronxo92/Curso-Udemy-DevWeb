@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FrontEnd Store</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header class="header">
+        <a href="index.html">
+            <img class="header__logo" src="img/logo.png" alt="logo">
+        </a>
+    </header>
+
+    <nav class="navegacion">
+        <a href="index.html" class="navegacion__enlace">Tienda</a>
+        <a href="nosotros.html" class="navegacion__enlace">Nosotros</a>
+        
+        <a href="index.html" class="navegacion__carrito">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-shopping-cart" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffce00" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                <circle cx="6" cy="19" r="2" />
+                <circle cx="17" cy="19" r="2" />
+                <path d="M17 17h-11v-14h-2" />
+                <path d="M6 5l14 1l-1 7h-13" />
+              </svg>
+        </a>
+    </nav>
+
+    <main class="contenedor">
+        <h1 id="nombre_camiseta">Nombre producto</h1>
+        <div class="camiseta">
+            <img id="img_camiseta" src="img/4.jpg" alt="" class="camiseta__imagen">
+            <div class="camiseta__info">
+                <p class="camiseta__p">Morbi mi turpis, luctus vitae dignissim in, feugiat sit amet augue. Morbi ac
+                    malesuada libero, eu pretium dui. Ut scelerisque, eros tempus sollicitudin efficitur, sem metus
+                    porttitor nisl, quis
+                    sodales neque sem et augue.</p>
+                <h3 id="precio_camiseta" class="camiseta__precio"></h3>
+                <form class="camiseta__form">
+                    <select class="form__input" name="talla" id="tallaje">
+                        <option disabled="" selected="">-- Elige una talla --</option>
+                        <option>S</option>
+                        <option>M</option>
+                        <option>L</option>
+                        <option>XL</option>
+                    </select>
+                    <input class="form__input" type="number" name="cantidad" id="cantidad" placeholder="Cantidad"
+                        min="1">
+                    <input class="form__submit" type="submit" value="Agregar al carrito">
+                </form>
+
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p class="footer__texto">© Todos los derechos reservados - Ruben de la Cruz Diaz - <span id="year"></span></p>
+    </footer>
+</body>
+<script>
+    var date = new Date();
+    var year = date.getFullYear();
+    document.getElementById("year").innerHTML = year;
+
+    let urlParams = new URLSearchParams(window.location.search);
+    let id = urlParams.get("id");
+    let nombre = urlParams.get("nombre");
+    let precio = urlParams.get("precio");
+    console.log("nombre camiseta: " + nombre);
+    console.log("precio camiseta: " + precio);
+    console.log("id: " + id);
+
+    const img_camiseta = document.getElementById("img_camiseta");
+    const titulo_camiseta = document.getElementById("nombre_camiseta");
+    const precio_camiseta = document.getElementById("precio_camiseta");
+
+    img_camiseta.src = "img/" + id + ".jpg";
+    titulo_camiseta.innerHTML = nombre;
+    precio_camiseta.innerHTML = precio;
+
+</script>
+
+</html>

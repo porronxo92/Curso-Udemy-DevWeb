@@ -1,0 +1,73 @@
+<?xml version="1.0"?>
+<data>
+    <camiseta>
+        <id>1</id>
+        <nombre>Vue JS</nombre>
+        <precio>25€</precio>
+    </camiseta>
+    <camiseta>
+        <id>2</id>
+        <nombre>Angular JS</nombre>
+        <precio>25€</precio>
+    </camiseta>
+    <camiseta>
+        <id>3</id>
+        <nombre>React JS</nombre>
+        <precio>25€</precio>
+    </camiseta>
+    <camiseta>
+        <id>4</id>
+        <nombre>Redux</nombre>
+        <precio>25€</precio>
+    </camiseta>
+    <camiseta>
+        <id>5</id>
+        <nombre>Node JS</nombre>
+        <precio>25€</precio>
+    </camiseta>
+    <camiseta>
+        <id>6</id>
+        <nombre>SASS</nombre>
+        <precio>25€</precio>
+    </camiseta>
+    <camiseta>
+        <id>7</id>
+        <nombre>HTML5</nombre>
+        <precio>25€</precio>
+    </camiseta>
+    <camiseta>
+        <id>8</id>
+        <nombre>Github</nombre>
+        <precio>25€</precio>
+    </camiseta>
+    <camiseta>
+        <id>9</id>
+        <nombre>bulma css</nombre>
+        <precio>25€</precio>
+    </camiseta>
+    <camiseta>
+        <id>10</id>
+        <nombre>typescript</nombre>
+        <precio>25€</precio>
+    </camiseta>
+    <camiseta>
+        <id>11</id>
+        <nombre>drupal</nombre>
+        <precio>25€</precio>
+    </camiseta>
+    <camiseta>
+        <id>12</id>
+        <nombre>javascript</nombre>
+        <precio>25€</precio>
+    </camiseta>
+    <camiseta>
+        <id>13</id>
+        <nombre>graphql</nombre>
+        <precio>25€</precio>
+    </camiseta>
+    <camiseta>
+        <id>14</id>
+        <nombre>wordpress</nombre>
+        <precio>25€</precio>
+    </camiseta>
+</data>

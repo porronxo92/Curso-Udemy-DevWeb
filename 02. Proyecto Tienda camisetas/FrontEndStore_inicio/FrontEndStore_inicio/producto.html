@@ -21,17 +21,21 @@
     </header>
 
     <nav class="navegacion">
-        <a href="index.html" class="navegacion__enlace">Tienda</a>
-        <a href="nosotros.html" class="navegacion__enlace">Nosotros</a>
-        
+        <div class="navegacion__titulos">
+            <a href="index.html" class="navegacion__enlace navegacion__enlace--activo">Tienda</a>
+            <a href="nosotros.html" class="navegacion__enlace">Nosotros</a>
+        </div>
         <a href="index.html" class="navegacion__carrito">
-            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-shopping-cart" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffce00" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+            <svg id="img_carrito" xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-shopping-cart" width="44"
+                height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#fff" fill="none" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                 <circle cx="6" cy="19" r="2" />
                 <circle cx="17" cy="19" r="2" />
                 <path d="M17 17h-11v-14h-2" />
                 <path d="M6 5l14 1l-1 7h-13" />
-              </svg>
+            </svg>
+            <span id="contador" class="contador__carrito">0</span>
         </a>
     </nav>
 
@@ -53,9 +57,9 @@
                         <option>L</option>
                         <option>XL</option>
                     </select>
-                    <input class="form__input form__input--number" type="number" name="cantidad" id="cantidad" placeholder="Cantidad"
-                        min="1">
-                    <input class="form__submit" type="submit" value="Agregar al carrito">
+                    <input class="form__input form__input--number" type="number" name="cantidad" id="cantidad"
+                        placeholder="Cantidad" min="1">
+                    <input id="anadir_carrito" class="form__submit" type="submit" value="Agregar al carrito">
                 </form>
 
             </div>
@@ -85,7 +89,23 @@
 
     img_camiseta.src = "img/" + id + ".jpg";
     titulo_camiseta.innerHTML = nombre;
-    precio_camiseta.innerHTML = "Precio -> "+ precio;
+    precio_camiseta.innerHTML = "Precio -> " + precio;
+
+    const sumarcarrito = document.getElementById("anadir_carrito");
+    const contador = document.getElementById("contador");
+    const img_carrito = document.getElementById("img_carrito");
+    sumarcarrito.addEventListener('click', function (event) {
+        event.preventDefault(); // Prevents the form from submitting
+        contador.innerHTML = parseInt(contador.innerHTML) + 1;
+        if (contador.innerHTML > 0) {
+            contador.style.color = '#ffce00';
+            img_carrito.style.stroke = '#ffce00';
+        } else {
+            contador.style.color = '#fff';
+        }
+    });
+
+
 
 </script>
 

@@ -112,12 +112,18 @@ h3 {
 .navegacion {
     background-color: var(--primaryColorDark);
     padding: 2rem;
-    display: flex;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: 90% 10%;
     gap: 2rem;
+
 }
 
-.navegacion__enlace {
+.navegacion__titulos{
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+}
+.navegacion__enlace{
     font-family: var(--fuentePrincipal);
     color: var(--blanco);
     font-size: 3rem;
@@ -126,13 +132,25 @@ h3 {
 .navegacion__enlace--activo,
 .navegacion__enlace:hover {
     color: var(--secondaryColor);
-
 }
 
 .navegacion__carrito{
     display: flex;
-    justify-content: end;
-    align-items: end;
+    justify-content: center;
+    width: 100%;
+}
+
+.contador__carrito{
+    font-family: var(--fuentePrincipal);
+    color: #fff;
+}
+
+@media (width < 768px) { 
+    .navegacion {
+        display: grid;
+        grid-template-columns: 70% 30%;
+        gap: 2rem;
+    }
 }
 
 /* Grid */

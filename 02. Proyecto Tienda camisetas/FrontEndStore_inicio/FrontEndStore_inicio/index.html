@@ -21,27 +21,29 @@
     </header>
 
     <nav class="navegacion">
-        <a href="index.html" class="navegacion__enlace navegacion__enlace--activo">Tienda</a>
-        <a href="nosotros.html" class="navegacion__enlace ">Nosotros</a>
-        <div class="navegacion__carrito">
-            <a href="index.html">
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-shopping-cart" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffce00" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                    <circle cx="6" cy="19" r="2" />
-                    <circle cx="17" cy="19" r="2" />
-                    <path d="M17 17h-11v-14h-2" />
-                    <path d="M6 5l14 1l-1 7h-13" />
-                  </svg>
-            </a>
-
+        <div class="navegacion__titulos">
+            <a href="index.html" class="navegacion__enlace navegacion__enlace--activo">Tienda</a>
+            <a href="nosotros.html" class="navegacion__enlace">Nosotros</a>
         </div>
+        <a href="index.html" class="navegacion__carrito">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-shopping-cart" width="44"
+                height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#fff" fill="none" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                <circle cx="6" cy="19" r="2" />
+                <circle cx="17" cy="19" r="2" />
+                <path d="M17 17h-11v-14h-2" />
+                <path d="M6 5l14 1l-1 7h-13" />
+            </svg>
+            <span class="contador__carrito">0</span>
+        </a>
     </nav>
 
     <main class="contenedor">
         <h1>Nuestros productos</h1>
 
         <div id="grid" class="grid">
-            
+
             <!-- Div de graficos de camisetas sin producto -->
             <div class="grafico grafico--camisetas">
             </div>
@@ -196,7 +198,7 @@
 
                 p_precio.innerHTML = precio;
                 p_nombre.innerHTML = nombre;
-                a.href = "producto.html?id=" + i + "&nombre="+nombre+"&precio="+precio;
+                a.href = "producto.html?id=" + i + "&nombre=" + nombre + "&precio=" + precio;
 
                 prod_info.appendChild(p_nombre);
                 prod_info.appendChild(p_precio);
@@ -208,7 +210,7 @@
     };
     xhr.send();
 
-    
+
 
 
 </script>

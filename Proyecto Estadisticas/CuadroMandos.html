@@ -1,0 +1,130 @@
+﻿<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+</head>
+<body style="background-color:aliceblue">
+    <form id="form1" runat="server">
+        <div style="height: 95%; width:20% ; left: 0%; position: fixed; top: 0; background-color:rgb(60,227,184)">
+            <img id="imgLogo" runat="server" style="margin:20px" src="Images/logo_minsait.jpg" height="100" width="200"/>
+            <br /><br />
+            <br /><br />
+            <table style="height:40%; width:100%">
+                <tr  style="width:100%">
+                    
+                    <td style="height:30px"><button ID="Button1" runat="server" Text="AUDITORÍA DE FACTURAS" Width="210px" Height="40px" OnClick="abrirVentanaFacturasSeleccion">AUDITORÍA DE FACTURAS</button></td>
+                </tr>
+                <tr  style="width:100%">
+                    <td style="height:30px"><Button ID="Button5" runat="server" Text="AUDITORÍA DE RENDIMIENTO" Width="210px" Height="40px" OnClick="abrirVentanaAuditoriaRendimiento">AUDITORÍA DE RENDIMIENTO</Button></td>
+                </tr>
+                <tr  style="width:100%">
+                    <td style="height:30px"><button ID="Button2" runat="server" Text="PRODUCTIVIDAD" Width="210px" Height="40px" OnClick="abrirVentanaProductividad">PRODUCTIVIDAD</button></td>
+                </tr>
+                <tr  style="width:100%">
+                    <td style="height:30px"><Button ID="btnGeneracionInformes" runat="server" Text="GENERACIÓN DE INFORMES" Width="210px" Height="40px" OnClick="abrirVentanaInformePersonalizado">GENERACIÓN DE INFORMES</Button></td>
+                </tr>
+                <!--ESPACIO-->
+                <tr  style="width:100%"> 
+                    <td style="height:30px"></td>
+                </tr>
+                <!--ALERTAS O EXPORTAR A CSV-->
+                <tr  style="width:100%">
+                    <td style="height:30px"><Button runat="server" ID="btnMostrarAlertas" Text="MAS ALERTAS" Width="120px" Height="30px" OnClick="abrirVentanaAlertas" Visible="true">MAS ALERTAS</Button></td>
+                </tr>
+                <!--ESPACIO-->
+                <tr  style="width:100%"> 
+                    <td style="height:30px"></td>
+                </tr>
+                <!--VOLVER-->
+                <tr  style="width:100%">
+                    <td style="height:30px"><Button runat="server" Text="SALIR" Width="100px" Height="30px" OnClick="volver">SALIR</Button></td>
+                </tr>
+            </table>
+        </div>
+
+        <div style="height: 95%; width:80% ; left: 20%; position: fixed; top: 0; overflow:auto">
+            <div tyle="overflow:auto">
+                <table>
+                    <tr>
+                        <td><Button ID="btnTOTAL" runat="server" Text="TOTAL" Width="100px" Height="30px" OnClick="botonTotalClick"></td>
+                        <td><PlaceHolder runat="server" ID="panelProyectos"/></td>
+                    </tr>
+                </table>
+            </div>
+            <div >
+                <h2 id="txtEstado" style="text-align: center;" runat="server"></h2>
+                <table style="width:100%">
+                    <tr>
+                        <td style="width:40%">
+                            <Chart ID="Chart1" runat="server" Width="300px" BackColor="AliceBlue">  
+                                <series>  
+                                    <Series Name="Series1" XValueMember="0" YValueMembers="2" ChartType="Bar">  
+                                    </Series>  
+                                </series>  
+                                <chartareas>  
+                                    <ChartArea Name="ChartArea1">  
+                                    </ChartArea>  
+                                </chartareas>  
+                            
+                            </Chart> 
+                        </td>
+                        <td style="width:30%">
+                            <Chart ID="Chart2" runat="server" Width="200px" BackColor="AliceBlue">  
+                                <series>  
+                                    <Series Name="Series2" XValueMember="0" YValueMembers="2" ChartType="Pie">  
+                                    </Series>  
+                                </series>  
+                                <chartareas>  
+                                    <ChartArea Name="ChartArea2">  
+                                    </ChartArea>  
+                                </chartareas>                              
+                            </Chart>  
+                        </td>
+                        <td style="width:30%">
+                            <Chart ID="Chart3" runat="server" Width="200px" BackColor="AliceBlue">  
+                                <series>  
+                                    <Series Name="Series3" XValueMember="0" YValueMembers="2" ChartType="Pie">  
+                                    </Series>  
+                                </series>  
+                                <chartareas>  
+                                    <ChartArea Name="ChartArea3">  
+                                    </ChartArea>  
+                                </chartareas>                           
+                            </Chart>  
+                        </td>
+                    </tr>
+                </table>            
+            </div> 
+            <p></p>
+            <div style="overflow:auto" runat="server" id="divAlertas">
+                <table style="margin-left:20px; margin-right:20px;">
+                    <tr>
+                        <td style="width:70%"><h2 style="text-align: center;">Alertas de los procesos</h2></td>
+                    </tr>
+                    <tr>
+                        <td style="width:70%">
+                            <GridView runat="server" ID="gridAlertas" CellPadding="5" CellSpacing="5" OnRowDataBound="GridAlertasDataBound" Width="100%" word-wrap="break-word">
+                                <HeaderStyle BackColor="darkblue" ForeColor="White"/>
+                                <RowStyle BackColor="whitesmoke"/>
+                                <AlternatingRowStyle BackColor="lightgray"/>
+                            </GridView>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div style="height: 5%; width:100% ; left: 0; bottom:0; position: fixed; overflow:auto; background-color:rgb(57, 110, 169)">
+                <table style="border:1px solid black; height:100%; width:100%">
+                    <tr  style="height:100%">
+                        <td style="width:55%"></td>
+                        <td style="width:15%"><Label runat="server" Text="© Indra 2023." ForeColor="White"></Label></td>
+                        <td style="width:15%"><Label runat="server" Text="Cuadro de Mandos v1.0" ForeColor="White"></Label></td>
+                        <td style="width:15%"></td>
+                    </tr>
+                </table>       
+            </div>
+        </div>             
+    </form>
+</body>
+</html>

@@ -1,0 +1,221 @@
+
+
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minsait Statistics</title>
+    <link rel="icon" href="img/icono.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Saira+Semi+Condensed:wght@200;400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/estilos.css">
+    <script type="text/javascript" >
+        function preventBack() { window.history.forward(); }
+        setTimeout("preventBack()", 0);
+        window.onunload = function () { null };
+    </script>
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="contenedor barra">
+            <a>
+                <img class="header__img" src="./img/cover.svg" alt="logotipo"></a>
+            <a class="header__logout" href="index.aspx">Cerrar sesión<svg class="banner__img" xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-logout"
+                    width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="#fff" fill="none"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                    <path d="M14 8v-2a2 2 0 0 0 -2 -2h-7a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 2h7a2 2 0 0 0 2 -2v-2" />
+                    <path d="M7 12h14l-3 -3m0 6l3 -3" />
+                </svg>
+            </a>
+        </div>
+    </header>
+
+    <main id="main" class="contenedor">
+        <div class="banner">
+            <h2><a id="lbl_CuadroMandos" class="texto_titulo" href="javascript:__doPostBack(&#39;lbl_CuadroMandos&#39;,&#39;&#39;)">Cuadro de mandos</a></h2>
+            <nav class="banner__navegacion">
+                <a id="lblAuditoriaFacturas" class="navegacion__enlace" href="javascript:__doPostBack(&#39;lblAuditoriaFacturas&#39;,&#39;&#39;)">Auditoría de Facturas</a>
+                <a id="lblAuditoriaRendimiento" class="navegacion__enlace" href="javascript:__doPostBack(&#39;lblAuditoriaRendimiento&#39;,&#39;&#39;)">Auditoría de Rendimiento</a>
+                <a id="lblProductividad" class="navegacion__enlace" href="javascript:__doPostBack(&#39;lblProductividad&#39;,&#39;&#39;)">Productividad</a>
+                <a id="lblInformePersonalizado" class=" no-display navegacion__enlace">Generación de informes</a>
+                <a id="lblAlertas" class=" no-display navegacion__enlace">Alertas</a>
+                <a id="lblExportarCSV" class="no-display navegacion__enlace subrayado " href="javascript:__doPostBack(&#39;lblExportarCSV&#39;,&#39;&#39;)">Exportar a CSV</a>
+                <a id="lblActualizar" class="navegacion__enlace" href="javascript:__doPostBack(&#39;lblActualizar&#39;,&#39;&#39;)">Actualizar</a>
+            </nav>
+        </div>
+
+        <form method="post" action="./MinsaitCuadroMandos?usuario=jaristondo" id="ctl00">
+<div class="aspNetHidden">
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="xZhvaNZa7nAd4ekbrcNcNoDFn65qHhMPM1oiy0fPBCgRi3ma0P9miip8vmb/lAJlGxXqviI40RXAYzCE5cS4sfWed5rpnoFqz1ItS53QV1SBuyHC/7BYIzqoMTM8GeQZnXyG4Bk8W6YcyyjKB+O01YIABJe5l0rQvbAsgxrdToviIhLapaGbuh9J+HMZ/U6NXhvscOgCSDdDmUMYuqkbrTmvtd3SIqJzuVDoTJrcnwPP0f48ttTU2DMiVU1SebZ4UBZKVwlwF2/Ky2cQg+a+L6XPPWOfrmJRzR6OfATBda9jjJCsIzF4iglHXwStKJ1tprgm8O56zSxOUobStQ6/xW1muPvBiQNk9aFrlmFVLha/XoQt21rxFV/EAcwO1Fpwv2UAnfuwmpFb3sTs5IMoFxfwJQZDoSNmMppdEghnh/G6IFVaBws2e6XSIEHTm8bItTnjy9ZdHx9u05QdgwFIo43jmSKycFQUwxm9U+9u8sy3o1UTFqSvqbqoBZ4K/nBUZ/VD5X+pA8A2pYujpm3pIiorB7UyGNsz4nqxNoEAEHNV9wZcY5zZAS1gqvUmPDIEuS4CrjQNE0qLWwWI1jA5283qo3fK0525X727rdp0X+NHG1GwbbJC2gY3Q5t1Ey2B1tqF3BZ7fFFSjqckurFw/WYZFIuEKFgENuthhvp+xB5iWmgnS/r2LguefwQYoXyirxGeSW7NXSNNgYRkeNTnqA==" />
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['ctl00'];
+if (!theForm) {
+    theForm = document.ctl00;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="1075FE55" />
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="R/LhZbA1AAfED64rNVju4je6V1wCzaxRbnb+M7FzPmKa2i5xG+USPcYaIemCoDoq4iFv+kxiS6WZKPIw0cNcOsWj76/8J2vALiaOENL1JUfTAJ6rjbUA6tuaKKEiDvPQ/7rzzal0/CoO1jSUF0T5dXICCXtt0lrv2pEQ2btZOb+IVqbKswTsyKu37K1vNYm3S5prGSVsTLxdg+qebo5s/yWtC+4Z5kWig27CSRdHT1uPB9arMYVBfC9KQe89V9YTuSte6luzpoyvLA7uF/wpzGpSslGiMZe6NcFdpmsEVOiESfQLt+17pSFeqVxBPXX0gYeFlsXnyOVhaIr+Oe4ukFyNfaKnCv6y5GhwsC5AFWLhtHLKrLT/hAgRNe+oqKj/c+Q+H5ytDNd5Sy+IdOYpaw==" />
+</div>
+            <div class="principal">
+                <div id="divBanner_izq" class="principal__bannerizq" style="display:none;">
+                    <p id="txtDescripcion">Explicacion breve de la pantalla que se ha seleccionado.</p>
+                    <div class="formulario">
+                        <div class="formulario__campo formulario__campo--fecha">
+                            <label for="inicio">Fecha inicio </label>
+                            <input name="txtFechaIni" type="date" id="txtFechaIni" class="campo__texto" />
+                        </div>
+                        <div class="formulario__campo formulario__campo--fecha">
+                            <label for="fin">Fecha fin </label>
+                            <input name="txtFechaFin" type="date" id="txtFechaFin" class="campo__texto" />
+                        </div>
+                        <!--<p>[Añadir todos los campos que se necesiten para buscar]</p>-->
+                        <div id="divUsuario" class="formulario__campo formulario__campo--fecha" style="display:none;">
+                            <label for="usuario">Usuario </label>
+                            <select name="cboxUsuario" id="cboxUsuario" class="campo__texto">
+	<option value=""></option>
+
+</select>
+                        </div>
+                        <div id="divNumFactura" class="formulario__campo formulario__campo--fecha">
+                            <label for="numeroFactura">Número factura </label>
+                            <input name="txtNumFactura" type="text" id="txtNumFactura" class="campo__texto" />
+                        </div>
+                        <div id="divNombrePDF" class="formulario__campo formulario__campo--fecha">
+                            <label for="nombrePDF">Nombre PDF </label>
+                            <input name="txtNombrePDF" type="text" id="txtNombrePDF" class="campo__texto" />
+                        </div>
+                        <div id="divCIFProveedor" class="formulario__campo formulario__campo--fecha">
+                            <label for="CIFProveedor">CIF Proveedor </label>
+                            <input name="txtCIFProveedor" type="text" id="txtCIFProveedor" class="campo__texto" />
+                        </div>
+                        <div id="divCIFSociedad" class="formulario__campo formulario__campo--fecha">
+                            <label for="CIFSociedad">CIF Sociedad </label>
+                            <input name="txtCIFSociedad" type="text" id="txtCIFSociedad" class="campo__texto" />
+                        </div>
+                        <div class="formulario__buscar">
+                            <!--<button>Buscar</button>-->
+                            <input type="submit" name="ctl02" value="Buscar" class="formulario__campo--enviar" />
+                        </div>
+                        
+                        <p id="txtMensaje"></p>
+                    </div>
+                </div>
+                <div class="principal__datos">
+                    
+                <div id="principal-grafico" class="principal__graficos">
+                    <div id="divGraficos1" class="tabla" style="display:flex;">
+                        <h3 id="txtDocumentosActuales">Documentos actuales en el sistema: 0</h3>
+                        <table>
+                            <tr>
+                                <td></td>
+                                <td>
+                                    <img id="Chart4" class="principal__grafico" src="/iCM_Statistics_WebPage/ChartImg.axd?i=charts_0/chart_0_48.png&amp;g=3053095527c543c2a8c7030632a4f347" alt="" style="height:300px;width:300px;border-width:0px;" />
+                                </td>
+                                <td>
+                                    <img id="Chart5" class="principal__grafico" src="/iCM_Statistics_WebPage/ChartImg.axd?i=charts_0/chart_0_49.png&amp;g=4c4dae5eb67846fda462cdbf83e8ddd7" alt="" style="height:300px;width:300px;border-width:0px;" />
+                                </td>
+                                <td></td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div id="divGraficos2" class="tabla" style="display:flex;">
+                        <h3 id="txtDocumentosDia">Documentos procesados del d&#237;a 03/03/2023: 0</h3>
+                        <table>
+                            <tr>
+                                <td>
+                                    <img id="Chart6" class="principal__grafico" src="/iCM_Statistics_WebPage/ChartImg.axd?i=charts_0/chart_0_50.png&amp;g=192eebcb82874d179bf020932549e0a4" alt="" style="height:300px;width:300px;border-width:0px;" />
+                                </td>
+                                <td>
+                                    <img id="Chart7" class="principal__grafico" src="/iCM_Statistics_WebPage/ChartImg.axd?i=charts_0/chart_0_51.png&amp;g=ba581f5fd4d94e9492f2d4af11d3388d" alt="" style="height:300px;width:300px;border-width:0px;" />
+                                </td>
+                                <td>
+                                    <img id="Chart8" class="principal__grafico" src="/iCM_Statistics_WebPage/ChartImg.axd?i=charts_0/chart_0_52.png&amp;g=9078f850bf03417bb42558645f52c5d6" alt="" style="height:300px;width:300px;border-width:0px;" />
+                                </td>
+                                <td>
+                                    <img id="Chart9" class="principal__grafico" src="/iCM_Statistics_WebPage/ChartImg.axd?i=charts_0/chart_0_53.png&amp;g=8b311eab227f420cbf7b462e0ca8cbc5" alt="" style="height:300px;width:300px;border-width:0px;" />
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div id="divGraficos3" class="tabla">
+                        <table>
+                            <tr>
+                                <td>
+                                    <img id="Chart1" class="principal__grafico" src="/iCM_Statistics_WebPage/ChartImg.axd?i=charts_0/chart_0_54.png&amp;g=ea034af5b5b74f919812b22e7a1befa7" alt="" style="height:300px;width:300px;border-width:0px;" />
+                                </td>
+                                <td>
+                                    <img id="Chart2" class="principal__grafico" src="/iCM_Statistics_WebPage/ChartImg.axd?i=charts_0/chart_0_55.png&amp;g=926272cd1ef142c1a1bf971faa71d8cd" alt="" style="height:300px;width:300px;border-width:0px;" />
+                                </td>
+                                <td>
+                                    <img id="Chart3" class="principal__grafico" src="/iCM_Statistics_WebPage/ChartImg.axd?i=charts_0/chart_0_56.png&amp;g=0696ab4cce444517b828e5004fb1c893" alt="" style="height:300px;width:300px;border-width:0px;" />
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                   
+                </div>
+                <div id="principal_tablas" class=" principal__tablas">
+                     <p id="lblFiltros"></p>
+                     <div id="divTablas1" class="tabla">                        
+                        <p id="txtCantidadDocumentos" style="display:none;"></p>
+                        <div>
+
+</div>
+                    </div>
+                    <div id="divTablas2" class="tabla">
+                        <div>
+
+</div>
+                        
+                        <div>
+
+</div>
+                        
+                        <div>
+
+</div>
+                        
+                        <div>
+
+</div>
+                    </div>
+                </div>
+            
+                </div>
+
+            </div>
+        </form>
+    </main>
+
+    <footer id="footer" class="footer">
+        <p class="footer__texto">© Todos los derechos reservados </p>
+        <img class="footer__imagen" src="./img/logo_minsait_blanco.jpg" alt="logo_minsait">
+    </footer>
+</body>
+
+</html>

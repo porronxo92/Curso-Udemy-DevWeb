@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+</head>
+<body style="background-color:aliceblue">
+    <form id="form1" runat="server">
+        <div style="height: 95%; width:20% ; left: 0%; position: fixed; top: 0; background-color:rgb(60,227,184)">
+            <img id="imgLogo" runat="server" style="margin:20px" src="Images/logo_minsait.jpg" height="100" width="200"/>
+        </div>
+
+        <div style="height: 95%; width:80% ; left: 20%; position: fixed; top: 0; overflow:auto">
+            <div style="border:thin solid black; margin:20px; padding:10px">
+                <h1 style="text-align:center">Cuadro de Mandos</h1>
+            </div>
+            <div style="border:thin solid black; margin:20px; padding:10px; left: 32%; position:absolute; text-align:center; width:30%">                
+                <table style="width:80%; margin:auto">
+                    <tr>
+                        <td style="width:100px; margin-right:20px"><span runat="server" id="lblProyecto">Proyecto </span></td>
+                        <td style="width:5%"></td>
+                        <td style="width:100px"><asp:DropDownList runat="server" ID="cboxProyecto" AutoPostBack="true" OnSelectedIndexChanged="cambioProyecto"></asp:DropDownList></td>               
+                    </tr>
+                    <tr>
+                        <td style="width:100px; margin-right:20px"><asp:Label runat="server" ID="lblUsu" Visible="true">Usuario </asp:Label></td>
+                        <td style="width:5%"></td>
+                        <td style="width:100px"><asp:TextBox runat="server" ID="txtUsu" Visible="true" Width="100px" Enabled="false"></asp:TextBox></td>
+                    </tr>
+                    <tr>
+                        <td style="width:100px; margin-right:20px"><asp:Label runat="server" ID="lblPass" Visible="true">Contraseña </asp:Label></td>
+                        <td style="width:5%"></td>
+                        <td style="width:100px"><asp:TextBox runat="server" ID="txtPass" Visible="true" TextMode="Password" Width="100px"></asp:TextBox></td>
+                    </tr>
+                </table>
+                <br /><br />
+                <asp:Button runat="server" align="center" Text="INICIAR SESIÓN" Width="150px" Height="30px" OnClick="loginAplicacion"/>
+                <br/><br />
+                <asp:Label runat="server" ID="txtMensaje" Text=""></asp:Label>
+                <br /><br />
+            </div>
+        </div>
+
+        <div style="height: 5%; width:100% ; left: 0; bottom:0; position: fixed; overflow:auto; background-color:rgb(57, 110, 169)">
+            <table style="border:1px solid black; height:100%; width:100%">
+                <tr align="center" style="height:100%">
+                    <td style="width:55%"></td>
+                    <td style="width:15%"><asp:Label runat="server" Text="© Indra 2023." ForeColor="White"></asp:Label></td>
+                    <td style="width:15%"><asp:Label runat="server" Text="Cuadro de Mandos v1.0" ForeColor="White"></asp:Label></td>
+                    <td style="width:15%"></td>
+                </tr>
+            </table>       
+        </div>
+    </form>
+</body>
+</html>

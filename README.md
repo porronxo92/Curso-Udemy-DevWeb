@@ -8,3 +8,6 @@ Repositorio de proyectos desarrollados con HTML5, CSS3, JavaScript, AJAX, PHP y 
 <h2>Proyecto 2 - Web Store de camisetas</h2>
 <p>Proyecto web de creacion de una tienda online de venta de camisetas, donde se crearan varias paginas donde el usuario puede navegar para comprar camisetas</p>
 
+<h2>Proyecto 3 - Blog de café</h2>
+<p>Proyecto web para la creacion de un sencillo blog de café con diferentes entradas y contenido en cada una de ellas, basado en HTML5 y CSS3</p>
+

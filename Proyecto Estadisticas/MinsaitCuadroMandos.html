@@ -1,0 +1,111 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Minsait Stadistics</title>
+    <link rel="icon" href="img/icono.ico" type="image/x-icon" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Saira+Semi+Condensed:wght@200;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/estilos.css" />
+  </head>
+
+  <body>
+    <div class="main_body">
+      <header class="header">
+        <div class="contenedor barra">
+          <a
+            ><img class="header__img" src="./img/cover.svg" alt="logotipo"
+          /></a>
+          <a href="MinsaitEstadistics.html">
+            <svg
+              class="banner__img"
+              xmlns="http://www.w3.org/2000/svg"
+              class="icon icon-tabler icon-tabler-logout"
+              width="30"
+              height="30"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="#fff"
+              fill="none"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+              <path
+                d="M14 8v-2a2 2 0 0 0 -2 -2h-7a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 2h7a2 2 0 0 0 2 -2v-2"
+              />
+              <path d="M7 12h14l-3 -3m0 6l3 -3" />
+            </svg>
+          </a>
+        </div>
+      </header>
+
+      <main class="contenedor">
+        <div class="banner">
+          <h2 class="banner__titulo"><a>Cuadro de mandos</a></h2>
+          <nav class="banner__navegacion">
+            <a class="navegacion__enlace">Auditoría de Facturas</a>
+            <a class="navegacion__enlace">Auditoría de Rendimiento</a>
+            <a class="navegacion__enlace">Productividad</a>
+            <a class="navegacion__enlace">Generación de informes</a>
+            <a class="navegacion__enlace">Alertas</a>
+          </nav>
+        </div>
+
+        <div class="principal">
+          <div class="principal__bannerizq">
+            <p>Explicacion breve de la pantalla que se ha seleccionado.</p>
+            <form class="formulario">
+              <div class="formulario__campo formulario__campo--fecha">
+                <label for="inicio">Fecha inicio </label>
+                <input type="date" name="inicio" id="inicio" />
+              </div>
+              <div class="formulario__campo formulario__campo--fecha">
+                <label for="fin">Fecha fin </label>
+                <input type="date" name="fin" id="fin" />
+              </div>
+              <p>[Añadir todos los campos que se necesiten para buscar]</p>
+              <div class="formulario__buscar">
+                <button>Buscar</button>
+              </div>
+            </form>
+          </div>
+          <div class="principal__tablas">
+            <div class="tabla">
+              <p class="tabla__nombre">Nombre de la tabla</p>
+              <table class="tabla__forma">
+                <tr class="main-row">
+                  <td class="main-column">Nombre</td>
+                  <td class="main-column">Edad</td>
+                  <td class="main-column">País</td>
+                </tr>
+                <tr class="data-row">
+                  <td class="data-column">María</td>
+                  <td class="data-column">25</td>
+                  <td class="data-column">Mexico</td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <div class="main_footer">
+        <div class="footer_container">
+          <p class="footer__texto">© Todos los derechos reservados</p>
+          <img
+            class="footer__imagen"
+            src="./img/logo_minsait_blanco.jpg"
+            alt="logo_minsait"
+          />
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

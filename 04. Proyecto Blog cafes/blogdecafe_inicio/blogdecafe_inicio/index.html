@@ -14,6 +14,8 @@
       href="https://fonts.googleapis.com/css2?family=Open+Sans&family=PT+Sans:wght@400;700&display=swap"
       rel="stylesheet"
     />
+    <!-- Prefetch >> Para cargar directamente paginas de forma anticipada antes de acceder a ellas  -->
+    <!-- Preload >> Para cargar elementos o recursos que necesitamos en la pagina actual, como una guia de estilos, imagenes, fuentes de Google etc... -->
   </head>
 
   <body>
@@ -47,7 +49,10 @@
         <h3>Nuestro Blog</h3>
         <article class="entrada">
           <div class="entrada__img">
-            <img src="img/blog1.jpg" alt="imagenBlog" />
+            <picture>
+              <source srcset="img/blog1.webp" type="image/webp">
+              <img loading="lazy" src="img/blog1.jpg" alt="imagenBlog" />
+            </picture>
           </div>
           <div class="entrada_contenido">
             <h4 class="no-margin">Tipos de grano de café</h4>
@@ -62,7 +67,10 @@
         </article>
         <article class="entrada">
           <div class="entrada__img">
-            <img src="img/blog2.jpg" alt="imagenBlog" />
+            <picture>
+              <source srcset="img/blog2.webp" type="image/webp">
+              <img loading="lazy" src="img/blog2.jpg" alt="imagenBlog" />
+            </picture>
           </div>
           <div class="entrada_contenido">
             <h4 class="no-margin">Tres delicias de café</h4>
@@ -77,7 +85,10 @@
         </article>
         <article class="entrada">
           <div class="entrada__img">
-            <img src="img/blog3.jpg" alt="imagenBlog" />
+            <picture>
+              <source srcset="img/blog3.webp" type="image/webp">
+              <img loading="lazy" src="img/blog3.jpg" alt="imagenBlog" />
+            </picture>
           </div>
           <div class="entrada_contenido">
             <h4 class="no-margin">Beneficios del café</h4>
@@ -141,5 +152,6 @@
         </div>
       </div>
     </footer>
+    <script src="js/modernizr.js"></script>
   </body>
 </html>

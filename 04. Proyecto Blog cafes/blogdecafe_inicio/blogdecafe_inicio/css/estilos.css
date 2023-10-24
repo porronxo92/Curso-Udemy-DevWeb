@@ -4,7 +4,31 @@
 
   --colorPrimario: #784d3c;
   --blanco: #ffffff;
-  --negro: #000;
+
+  --negro-50: #f6f6f6;
+  --negro-100: #e7e7e7;
+  --negro-200: #d1d1d1;
+  --negro-300: #b0b0b0;
+  --negro-400: #888888;
+  --negro-500: #6d6d6d;
+  --negro-600: #5d5d5d;
+  --negro-700: #4f4f4f;
+  --negro-800: #454545;
+  --negro-900: #3d3d3d;
+  --negro-950: #000000;
+
+  --colorPrimario-50: #f7f4ef;
+  --colorPrimario-100: #ebe3d6;
+  --colorPrimario-200: #d9c7af;
+  --colorPrimario-300: #c3a581;
+  --colorPrimario-400: #b1865e;
+  --colorPrimario-500: #a27550;
+  --colorPrimario-600: #8b5e43;
+  --colorPrimario-700: #784d3c;
+  --colorPrimario-800: #5f3e34;
+  --colorPrimario-900: #533630;
+  --colorPrimario-950: #2f1c19;
+
 }
 
 html {
@@ -77,8 +101,15 @@ img {
 
 /* Header */
 
-.header {
+.webp .header{
+  background-image: url(../img/banner.webp);
+}
+
+.no-webp .header{
   background-image: url(../img/banner.jpg);
+}
+
+.header {
   height: 60rem;
   background-repeat: no-repeat;
   background-size: cover;
@@ -138,7 +169,7 @@ img {
 /* Entradas */
 
 .entrada {
-  border-bottom: 0.2rem solid var(--negro);
+  border-bottom: 0.2rem solid var(--negro-950);
   margin-bottom: 2rem;
 }
 
@@ -165,56 +196,124 @@ img {
 }
 
 .boton--primario {
-  background-color: var(--negro);
+  background-color: var(--negro-400);
+  border-radius: 1rem;
 }
+.boton--primario:hover {
+  background-color: var(--negro-600);
+}
+
 .boton--secundario {
-  
-  background-color: var(--colorPrimario);
+  background-color: var(--colorPrimario-500);
+  border-radius: 1rem;
 }
+.boton--secundario:hover {
+  background-color: var(--colorPrimario-600);
+}
+
 
 /* Lista cursos */
 
-.cursos{
+.cursos {
   list-style: none;
 }
 
-.widget-curso__label{
+.widget-curso__label {
   font-family: var(--fuenteheading);
   font-weight: bold;
 }
 
-.widget-curso__info{
+.widget-curso__info {
   font-family: var(--fuenteheading);
   font-weight: 400;
 }
 
-.widget-curso{
+.widget-curso {
   border-bottom: 1px solid;
 }
 
-.widget-curso:last-of-type{
+.widget-curso:last-of-type {
   border-bottom: none;
 }
 
 /* Footer */
 
-.footer{
-  background-color: var(--negro);
+.footer {
+  background-color: var(--negro-950);
   padding: 0 3rem;
   margin-top: 2rem;
 }
 
-.footer__contenedor{
+.footer__contenedor {
   display: flex;
   justify-content: space-between;
 }
 
 /* Pagina Nosotros */
 
-@media (min-width: 768px) { 
-  .informacion{
+@media (min-width: 768px) {
+  .informacion {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 3rem;
   }
+}
+
+/* Cursos */
+.curso {
+  gap: 3rem;
+  border-bottom: 0.2rem groove;
+  padding: 3rem 0;
+}
+
+.curso:last-of-type {
+  border: none;
+}
+
+@media (min-width: 768px) {
+  .curso {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    column-gap: 2rem;
+  }
+}
+
+/* Contacto */
+
+.imagen__contacto{
+  background-image: url(../img/contacto.jpg);
+  height: 40rem;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.form__contacto {
+  background-color: var(--blanco);
+  width: 95%;
+  margin: -5rem auto ;
+  padding: 5rem;
+}
+
+.form__campo{
+  display: flex;
+  margin-bottom: 2rem;
+  font-weight: bold;
+}
+
+.form__campo--boton{
+  justify-content: flex-end;
+}
+
+.campo_label{
+  text-align: right;
+  padding-right: 2rem;
+  flex: 0 0 20%;
+}
+.campo_field{
+  flex: 1 1 80%;
+  border: 1px groove;
+}
+
+.boton:hover{
+  cursor: pointer;
 }

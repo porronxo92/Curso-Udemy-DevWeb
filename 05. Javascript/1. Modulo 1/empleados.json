@@ -1,0 +1,25 @@
+{
+    "empleados": [
+      {
+        "id": 1,
+        "nombre": "Juan Pérez",
+        "puesto": "Desarrollador"
+      },
+      {
+        "id": 2,
+        "nombre": "Ana García",
+        "puesto": "Diseñador"
+      },
+      {
+        "id": 3,
+        "nombre": "Carlos López",
+        "puesto": "Gerente de Proyecto"
+      },
+      {
+        "id": 4,
+        "nombre": "María Rodriguez",
+        "puesto": "Analista de Datos"
+      }
+    ]
+  }
+  

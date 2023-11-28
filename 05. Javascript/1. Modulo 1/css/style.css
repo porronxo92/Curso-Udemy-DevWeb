@@ -1,0 +1,119 @@
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+/* Globales */
+
+body {
+  font-size: 1.6rem;
+  /* 1rem = 10px */
+  font-family: var(--fuenteParrafos);
+  line-height: 2;
+  background: #4b6cb7; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #182848,
+    #4b6cb7
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #182848,
+    #4b6cb7
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+
+h1,
+p,
+a {
+  font-family: "Carrois Gothic SC", sans-serif;
+  display: block;
+  text-align: center;
+  line-height: 0.8;
+  color: white;
+}
+
+.contenido {
+  width: min(90%, 120rem);
+  margin: 0 auto;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--fuenteheading);
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: 4.8rem;
+}
+h2 {
+  font-size: 4rem;
+}
+h3 {
+  font-size: 3.2rem;
+}
+h4 {
+  font-size: 2.8rem;
+}
+
+img {
+  max-width: 100%;
+}
+
+/* Utilidades */
+
+.no-margin {
+  margin: 0;
+}
+
+.no-padding {
+  padding: 0;
+}
+
+.centrar-texto {
+  text-align: center;
+}
+
+/* //Ficha usuario */
+ /* Estilo del grid */
+ .grid-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+@media (min-width: 780px) { 
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+}
+
+
+/* Estilo de la ficha de usuario */
+.card {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 15px;
+  text-align: center;
+}
+
+/* Estilo de la foto de perfil */
+.profile-picture {
+  width: 80px;
+  height: 80px;
+  border-radius: 30px;
+  object-fit: cover;
+  margin-bottom: 10px;
+}

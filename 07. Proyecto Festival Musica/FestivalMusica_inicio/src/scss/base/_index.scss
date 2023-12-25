@@ -1,0 +1,8 @@
+//el archivo index.scss debe estar en todas las carpetas de scss por que es 
+//donde se declaran los ficheros de la carpeta para que el app.scss pueda verlos
+//el orden en la ejecucion de los forward es importante a la hora de ejecucion y compilacion
+@forward 'variables';
+@forward 'mixins';
+@forward 'normalize';
+@forward 'globales';
+

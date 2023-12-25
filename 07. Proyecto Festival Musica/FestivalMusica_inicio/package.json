@@ -4,7 +4,10 @@
   "description": "Proyecto con GULP, SASS y HTML5",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sass": "sass --watch src/scss:build/css",
+    "gulp-tarea": "gulp tarea",
+    "dev": "gulp dev"
   },
   "keywords": [
     "SASS",
@@ -13,6 +16,9 @@
   "author": "Ruben de la Cruz Diaz",
   "license": "ISC",
   "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-plumber": "^1.2.1",
+    "gulp-sass": "^5.1.0",
     "sass": "^1.69.5"
   }
 }

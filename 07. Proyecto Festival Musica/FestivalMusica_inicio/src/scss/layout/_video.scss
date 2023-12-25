@@ -1,0 +1,53 @@
+@use "base/variables" as v;
+@use "base/mixins" as m;
+
+.video {
+  position: relative;
+  max-height: 70rem;
+  overflow: hidden;
+  .overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgb(9, 1, 41);
+    background: linear-gradient(
+      306deg,
+      rgba(9, 1, 41, 0.644782913165266) 20%,
+      rgba(121, 9, 117, 0.5) 62%,
+      rgba(255, 255, 255, 0.5523459383753502) 95%
+    );
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  video {
+    width: 100%;
+    display: block;
+  }
+}
+
+.contenido-video {
+  z-index: 1; //para configurar las capas cuando utilizamos absolut y relative
+  h2 {
+    color: v.$blanco;
+    font-size: 3rem;
+    margin: 0;
+    @include m.tablet {
+      font-size: 6rem;
+    }
+  }
+  p {
+    margin: 0;
+    color: v.$blanco;
+    font-size: 1rem;
+    display: inline-block;
+    background-color: v.$rosa;
+    width: max-content;
+    padding: 1rem;
+    font-weight: bold;
+    @include m.tablet {
+      font-size: 2rem;
+    }
+  }
+}

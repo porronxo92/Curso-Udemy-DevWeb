@@ -1,0 +1,62 @@
+@use 'base/variables' as v;
+/*
+Un mixin es un bloque de código SCSS que puedes definir y luego incluir en otros lugares de tu hoja de estilo. 
+Puedes pensar en ellos como "fragmentos" de código CSS que puedes reutilizar en diferentes partes de tu proyecto.
+¿Por qué Utilizar Mixins?
+Reutilización de Código: Puedes definir estilos comunes en un solo lugar y reutilizarlos en varios selectores.
+Mantenimiento: Si necesitas hacer cambios en un estilo específico, solo necesitas hacerlo en un lugar (el mixin) en lugar de en múltiples selectores.
+Claridad y Legibilidad: Los mixins pueden hacer que tu código sea más legible y claro al separar estilos comunes en bloques reutilizables.
+Configurabilidad: Puedes hacer que los mixins sean configurables pasando parámetros, lo que te permite adaptar el estilo según tus necesidades.
+*/
+@mixin heading {
+  text-transform: uppercase;
+  font-size: 2.4rem;
+  color: black;
+  letter-spacing: 2px;
+}
+
+/*
+MIXIN CONFIGURABLES - Son como funciones
+el mixin bordesRedondeados acepta un parámetro $radio para especificar el radio de los bordes. 
+Esto permite que el mixin sea configurable según las necesidades de cada uso.
+*/
+@mixin bordesRedondeados($radio) {
+    border-radius: $radio;
+}
+@mixin headingColor($color: black, $border-radius:false) {
+    text-transform: uppercase;
+    font-size: 2.4rem;
+    color: $color;
+    letter-spacing: 2px;
+    width: 50%;
+    background-color: aqua;
+    @if($border-radius){
+        border-radius: 2rem;
+    }    
+}
+
+/*
+@content se utiliza para representar el bloque de estilos que se incluirá cuando se invoque el mixin. 
+Permite que los estilos definidos en el lugar donde se utiliza el mixin se inserten dentro del propio mixin. 
+Es especialmente útil cuando deseas incluir reglas de estilo adicionales junto con las reglas del mixin.
+*/
+@mixin telefono {
+    @media(min-width: v.$telefono){
+        @content;
+    }
+}
+@mixin tablet {
+    @media(min-width: v.$tablet){
+        @content;
+    }
+}
+@mixin desktop {
+    @media(min-width: v.$desktop){
+        @content;
+    }
+}
+@mixin desktopXL {
+    @media(min-width: v.$desktopXL){
+        @content;
+    }
+}
